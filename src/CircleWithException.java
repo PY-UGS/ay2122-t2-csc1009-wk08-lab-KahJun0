@@ -41,11 +41,12 @@ public class CircleWithException {
     public boolean isValidRadius(double radius) {
         try{
             if (radius < 0) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Radius cannot be smaller than 0!");
             }
             return true;
         } catch (IllegalArgumentException e) {
-            System.out.println("Radius cannot be smaller than 0!");
+            System.out.println(e.getMessage());
+            System.exit(-1);
         }
         return false;
     }
